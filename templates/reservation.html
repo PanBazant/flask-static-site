@@ -3,19 +3,19 @@
 {% block content %}
 
     <form  class="reservation-form" action="">
-        <label for="">Rezerwacja na</label>
-        <input type="datetime-local">
-        <label for="">Liczba osób</label>
-        <input type="number">
-        <label for="">Telefon</label>
-        <input type="text">
-        <label for="">E-mail</label>
-        <input type="email">
-        <label for="">Osoba rezerwująca</label>
-        <input type="text">
-        <label for="Uwagi">Uwagi</label>
-        <input type="text">
-        <button type="submit">Rezerwuj</button>
+        <label for="reservation-time">Termin rezerwacji</label>
+        <input name="reservation-time" type="datetime-local">
+        <label for="reservation-amount">Liczba osób</label>
+        <input name="reservation-amount" type="number">
+        <label for="reservation-phone">Telefon</label>
+        <input name="reservation-phone" type="text">
+        <label for="reservation-email">E-mail</label>
+        <input name="reservation-email" type="email">
+        <label for="reservation-author">Osoba rezerwująca</label>
+        <input name="reservation-author" type="text">
+        <label for="reservation-remarks">Uwagi</label>
+        <textarea name="reservation-remarks" type=""> </textarea>
+        <button class="btn" type="submit">Rezerwuj</button>
     </form>
 
 {% endblock %}
