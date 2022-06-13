@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 
@@ -9,7 +10,7 @@ html, body {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    background-color: red;
+    background-color: #5C5552;
 }
 
 .nav-img{
@@ -42,7 +43,16 @@ html, body {
     justify-content: space-between;
     width: 100%;
     height: 100%;
-    background-color: rebeccapurple;
+    background-color: #F7F0F5;
+}
+
+.main-img{
+    height: 100%;
+    width: 100%;
+    min-height: 900px;
+    background-image: url('/static/images/main-img.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .section{
@@ -55,22 +65,22 @@ html, body {
 
 #section-1{
     height: 100%;
-    background-color: purple;
+    background-color: #DECBB7;
 
 }
 
 #section-2{
-    background-color: pink;
+    background-color: #8F857D;
 
 }
 
 #section-3{
-    background-color: purple;
+    background-color: #DECBB7;
 
 }
 
 #section-4{
-    background-color: pink;
+    background-color: #8F857D;
 
 }
 
@@ -91,7 +101,7 @@ footer{
     justify-content: center;
     width: 100%;
     color: white;
-    background-color: black;
+    background-color: #433633;
     padding: 2% 0;
 
 }
@@ -135,7 +145,7 @@ footer{
 .contact-container{
     height: 50%;
     width: 60%;
-    background-color: yellow;
+    background-color: #DECBB7;
     display: flex;
 }
 
