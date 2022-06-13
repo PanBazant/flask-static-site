@@ -14,9 +14,9 @@ def menu():
     return render_template("menu.html")
 
 
-@app.route("/opinion")
-def opinion():
-    return render_template("index.html")
+@app.route("/reservation")
+def reservation():
+    return render_template("reservation.html")
 
 
 @app.route("/contact")
