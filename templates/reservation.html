@@ -1,1 +1,21 @@
 {% extends "base.html" %}
+
+{% block content %}
+
+    <form  class="reservation-form" action="">
+        <label for="">Rezerwacja na</label>
+        <input type="datetime-local">
+        <label for="">Liczba osób</label>
+        <input type="number">
+        <label for="">Telefon</label>
+        <input type="text">
+        <label for="">E-mail</label>
+        <input type="email">
+        <label for="">Osoba rezerwująca</label>
+        <input type="text">
+        <label for="Uwagi">Uwagi</label>
+        <input type="text">
+        <button type="submit">Rezerwuj</button>
+    </form>
+
+{% endblock %}
