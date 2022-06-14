@@ -2,12 +2,36 @@
 
 {% block content %}
     <div class="menu">
-        <div class="item">
-            <span>Pizza sos, ser ,szynka</span>
+
+        <div class="menu-container">
+
+        
+
+            <div class="menu-filter">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input class="menu-search" type="text">
+            </div>
+            <div class="menu-checkbox">
+                <label for="pizza-hot">Ostre</label>
+                <input name="pizza-hot" type="checkbox">
+                <label for="pizza-sweet">Słodkie</label>
+                <input name="pizza-sweet"type="checkbox">
+            </div>
+            
+    
+            <div class="menu-list">
+                <div class="menu-item">
+                    <span>Pizza sos, ser ,szynka lorem55</span>
+                </div>
+                <div class="menu-item">Pizza</div>
+                <div class="menu-item">Pizza</div>
+                <div class="menu-item">Pizza</div>
+            </div>
+
+
         </div>
-        <div class="item">Pizza</div>
-        <div class="item">Pizza</div>
-        <div class="item">Pizza</div>
+
+
 
     </div>
 {% endblock %}
