@@ -103,11 +103,12 @@ html, body {
 
 .menu-container {
     display: flex;
+
     flex-direction: column;
-    width: 60%;
+    width: 50%;
     padding: 2% 0 2% 0;
     min-height: 60vh;
-    background-color: #DECBB7;
+    background-color: #F7F0F5;
     opacity: 0.8;
 }
 
@@ -116,7 +117,9 @@ html, body {
     justify-content: center;
     align-items: center;
     align-self: center;
-    width: 30%;
+    font-size: 1.6rem;
+    width: 40%;
+    height: 5vh;
     border: solid 1px;
     border-radius: 30px;
      padding: 10px 20px 10px 20px;
@@ -125,22 +128,49 @@ html, body {
 }
 
 .menu-checkbox{
+    font-size: 1.3rem;
+    margin-top: 2%;
     align-self: center;
 }
 
 .menu-search{
+    height: 3.5vh;
+    font-size: 1.6rem;
     margin-left: 2%;
     width: 90%;
 }
 
 .menu-list{
-
+    margin-top:  5%;
+    font-size: 1.5rem;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
 }
 
 .menu-item{
+    display: flex;
+    width: 80%;
+    /* margin-left: 10%; */
+    /* justify-content: center; */
 
 }
 
+.menu-item p{
+    display: flex;
+    align-items: center;
+    margin-right: 6%;
+}
+
+.menu-item .pizza-ingredients{
+    width: 20%;
+}
+
+.pizza-spiciness{
+    display: flex;
+    align-items: center;
+}
 
 
 /* footer */
