@@ -8,7 +8,7 @@
              "ser"
           ],
           "spiciness":0,
-          "sweet":"false",
+          "sweet":false,
           "priceSmallSize":"18",
           "priceMediumSize":"25",
           "priceLargeSize":"32"
@@ -22,7 +22,7 @@
              "salami"
           ],
           "spiciness":0,
-          "sweet":"false",
+          "sweet":false,
           "priceSmallSize":"20",
           "priceMediumSize":"27",
           "priceLargeSize":"31"
@@ -36,7 +36,7 @@
              "pieczarki"
           ],
           "spiciness":0,
-          "sweet":"false",
+          "sweet":false,
           "priceSmallSize":"19",
           "priceMediumSize":"26",
           "priceLargeSize":"30"
@@ -51,7 +51,7 @@
              "pieczarki"
           ],
           "spiciness":0,
-          "sweet":"false",
+          "sweet":false,
           "priceSmallSize":"22",
           "priceMediumSize":"29",
           "priceLargeSize":"36"
@@ -65,8 +65,8 @@
              "szynka",
              "ananas"
           ],
-          "spiciness":2,
-          "sweet":"true",
+          "spiciness":0,
+          "sweet":true,
           "priceSmallSize":"22",
           "priceMediumSize":"29",
           "priceLargeSize":"36"
@@ -80,11 +80,75 @@
              "kurczak",
              "ananas"
           ],
-          "spiciness":3,
-          "sweet":"true",
+          "spiciness":0,
+          "sweet":true,
           "priceSmallSize":"22",
           "priceMediumSize":"29",
           "priceLargeSize":"36"
-       }
+       },
+       {
+         "id":7,
+         "name":"Karaibska",
+         "ingredients":[
+            "sos",
+            "ser",
+            "szynka",
+            "kukurydza",
+            "ananas"
+         ],
+         "spiciness":0,
+         "sweet":true,
+         "priceSmallSize":"24",
+         "priceMediumSize":"31",
+         "priceLargeSize":"38"
+      },
+      {
+         "id":8,
+         "name":"Haitańska",
+         "ingredients":[
+            "sos",
+            "ser",
+            "kurczak",
+            "kukurydza",
+            "ananas"
+         ],
+         "spiciness":0,
+         "sweet":true,
+         "priceSmallSize":"24",
+         "priceMediumSize":"31",
+         "priceLargeSize":"38"
+      },
+      {
+         "id":9,
+         "name":"Diabelska",
+         "ingredients":[
+            "sos",
+            "ser",
+            "salami",
+            "oliwki",
+            "ostra papryka"
+         ],
+         "spiciness":2,
+         "sweet":false,
+         "priceSmallSize":"24",
+         "priceMediumSize":"31",
+         "priceLargeSize":"38"
+      },
+      {
+         "id":10,
+         "name":"Słodko-ostra",
+         "ingredients":[
+            "sos",
+            "ser",
+            "salami",
+            "ananas",
+            "ostra papryka"
+         ],
+         "spiciness":2,
+         "sweet":true,
+         "priceSmallSize":"24",
+         "priceMediumSize":"31",
+         "priceLargeSize":"38"
+      }
     ]
  }

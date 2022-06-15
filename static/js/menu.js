@@ -2,6 +2,7 @@ data = Array(data.menu)[0]
 const menuList = document.querySelector(".menu-list")
 
 
+
 function renderItem (item){
     const elem = document.createElement("div")
     elem.classList.add("menu-item")
@@ -54,45 +55,77 @@ function renderItem (item){
 data.forEach(item => renderItem(item))
 
 const menuSearch = document.querySelector(".menu-search")
+const pizzaHot = document.querySelector(".pizza-hot")
+const pizzaSweet = document.querySelector(".pizza-sweet")
 
-menuSearch.addEventListener("keydown", inputPizza)
+
+
+
+
+
+let spice = false
+let sweet = false
+
+pizzaHot.addEventListener('change', function() {
+    if (this.checked) {
+      spice = true
+      console.log("spice true")
+      searchPizza(word)
+    } else {
+        spice = false
+        console.log("spice false")
+        searchPizza(word)
+
+    }
+  });
+
+
+  pizzaSweet.addEventListener('change', function() {
+    if (this.checked) {
+      sweet = true
+      console.log("sweet true")
+      searchPizza(word)
+    } else {
+      sweet = false
+      searchPizza(word)
+      console.log("sweet false")
+
+    }
+  });
+
+
+menuSearch.addEventListener("keyup", inputPizza)
+// menuSearch.addEventListener("change", inputPizza)
+
+
+
 
 let word = ""
 
 function inputPizza(event){
-    const listOfSpecialCharacters = 
-    ["Shift", "Escape", "Control", "Alt", "CapsLock", "Meta", "ContexMenu", "AltGraph", "Insert",
-     "Delete", "Home", "End", "PageUp", "PageDown", "NumLock", "ScrollLock", 
-     "Enter", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"]
 
-    if (listOfSpecialCharacters.includes(event.key)) {
-        console.log("Prevent default action ", event.key)
-        event.preventDefault();
-    }
-    else if(event.key === "Backspace"){
-        word = word.slice(0, -1)
-    } else{
-        word = word + event.key
-    }
-    console.log(word)
+    word = menuSearch.value;
     searchPizza(word)
 }
 
 
 function searchPizza(word){
     menuList.innerHTML = "";
+    
     const filterData = data.filter( el => {
-        // console.log(el.name.includes(word))
-        // console.log(word)
-        return el.name.toLowerCase().includes(word.toLowerCase())
+
+        // console.log(spice)
+        // console.log(sweet)
+
+        console.log(word)
+
+
+
+        return el.name.toLowerCase().includes(word.toLowerCase()) &&
+                spice ? el.spiciness > 0 : el.name.toLowerCase().includes(word.toLowerCase()) && //nie wiem jaki dać inny warunek, żeby nie robiło nic w innym wypadku
+                sweet ? el.sweet === true : el.name.toLowerCase().includes(word.toLowerCase())
     })
+    
     filterData.forEach(item => renderItem(item))
 }
 
-
-// for (let i = 0; i < 10; i++){
-//     const elem = document.createElement("div");
-//     elem.classList.add("menu-item");
-//     elem.textContent = "XDDDDDDDDDDDDD"
-//     menuList.append(elem)
-// }

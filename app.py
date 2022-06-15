@@ -1,4 +1,5 @@
 from flask import Flask, render_template, url_for, json
+from itsdangerous import encoding
 
 
 app = Flask(__name__)
@@ -11,7 +12,7 @@ def index():
 
 @app.route("/menu")
 def menu():
-    with open('static/data/menu.json', 'r') as myfile:
+    with open('static/data/menu.json', 'r', encoding="utf-8") as myfile:
         data = myfile.read()
     print(data)
     return render_template("menu.html", title="page", jsonfile=json.dumps(data))
