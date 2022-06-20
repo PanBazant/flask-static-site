@@ -1,5 +1,7 @@
+from email.mime import image
 from flask import Flask, render_template, url_for, json, request
-import json
+import json, os
+
 
 
 app = Flask(__name__)
@@ -40,4 +42,6 @@ def contact():
 
 @app.route("/gallery")
 def gallery():
-    return render_template("gallery.html")
+    path_to_images = os.path.join('static', 'images')
+    images_file_list = os.listdir(path_to_images)
+    return render_template("gallery.html", images_file_list=images_file_list)

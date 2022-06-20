@@ -17,51 +17,42 @@
     <button class="carousel__button next" id="next"></button>
 </div> -->
 
-<div class="slide-container">
-    <span class="slider-span" id="slider-span1"></span>
-    <span class="slider-span" id="slider-span2"></span>
-    <span class="slider-span" id="slider-span3"></span>
-    <span class="slider-span" id="slider-span4"></span>
-    <span class="slider-span" id="slider-span5"></span>
-    <span class="slider-span" id="slider-span6"></span>
-    <span class="slider-span" id="slider-span7"></span>
 
+
+
+
+<div class="slide-container"> 
+    {% for image in images_file_list %}
+    <span class="slider-span" id={{'slider-span'+loop.index|string}}></span>
+    {% endfor %}
 
     <div class="image-slider">
-    <div class="slides-div" id="slide-1">
-        <img src="https://source.unsplash.com/300x300/?code" alt="" class="img" id="img1">
-        <a href="#slider-span1" class="button" id="button-1"></a>
-    </div>
-    <div class="slides-div" id="slide-2">
-        <img src="https://source.unsplash.com/300x300/?code" alt="" class="img" id="img2">
-        <a href="#slider-span2" class="button" id="button-2"></a>
-    </div>
-    <div class="slides-div" id="slide-3">
-        <img src="https://source.unsplash.com/300x300/?code" alt="" class="img" id="img3">
-        <a href="#slider-span3" class="button" id="button-3"></a>
-    </div>
-    <div class="slides-div" id="slide-4">
-        <img src="https://source.unsplash.com/300x300/?code" alt="" class="img" id="img4">
-        <a href="#slider-span4" class="button" id="button-4"></a>
-    </div>
-    <div class="slides-div" id="slide-5">
-        <img src="https://source.unsplash.com/300x300/?code" alt="" class="img" id="img5">
-        <a href="#slider-span5" class="button" id="button-5"></a>
-    </div>
-    <div class="slides-div" id="slide-6">
-        <img src="https://source.unsplash.com/300x300/?code" alt="" class="img" id="img6">
-        <a href="#slider-span6" class="button" id="button-6"></a>
-    </div>
-    <div class="slides-div" id="slide-7">
-        <img src="https://source.unsplash.com/300x300/?code" alt="" class="img" id="img7">
-        <a href="#slider-span7" class="button" id="button-7"></a>
+
+        {% for image in images_file_list %}
+    
+        <div class="slides-div" id={{'slide-'+loop.index|string}}>
+            <img src={{url_for('static', filename="/images/{}".format(image))}} alt="" class="img" id={{'img'+loop.index|string}}>
+            <a href={{'#slider-span'+loop.index|string}} class="button" id={{'button-'+loop.index|string}}></a>
+        </div>
+    
+    {% endfor %}
+
     </div>
 
 </div>
 
-</div>
 
-<script src={{url_for('static', filename="js/carousel.js")}}></script>
+
+
+
+
+
+
+<script type="text/javascript">
+    let imagesFileList = {{images_file_list | safe}}
+    console.log(imagesFileList)
+</script>
+<script src={{url_for('static', filename="js/gallery.js")}}></script>
 {% endblock%}
 
 <p style="width: 300px; height: 300px; background-color: red;">zdjecie</p>
