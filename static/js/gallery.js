@@ -54,14 +54,31 @@ let previousImage = 0;
 
 function imageRenderNext (event){
 
-    for (let i = 0; i < imageSlider.children.length; i++){
- 
-            console.log(imageSlider.children[i])
-        
-    }
-    console.log("!!!")
+    let carouselDirection = 0;
 
-    previousImage = event.currentTarget;
+     for (let i = 0; i < 5; i++){
+ 
+            if(imageSlider.children[i] === previousImage){
+                carouselDirection = -1
+                break
+            }
+        
+     }
+
+     for (let i = 5; i < imageSlider.children.length; i++){
+ 
+        if(imageSlider.children[i] === previousImage){
+            carouselDirection = 1
+            break
+        }
+    
+ }
+
+
+     console.log("!!!")
+
+    if (carouselDirection === 1){
+
     const tempSlideContainer = slideContainer.children[0];
     // console.log(tempSlideContainer.getAttribute("id").substring(11))
     let sliderSpanNewId = parseInt(tempSlideContainer.getAttribute("id").substring(11))  + slideContainer.children.length -1 // -1 bo poza spanami, którym przypisujemy id, jest jeszcze div
@@ -82,7 +99,6 @@ function imageRenderNext (event){
     tempImageSlider.children[1].setAttribute('id', "button-" + imageButtonNewId);
     tempImageSlider.children[1].setAttribute('href', "#slider-span" + imageButtonNewId);
 
-    // console.log(event.currentTarget.getAttribute("id").substring(6))
 
 
 
@@ -94,15 +110,80 @@ function imageRenderNext (event){
 
 
 
-    // event.currentTarget.children[0].style["left"] = "-50%"
     event.currentTarget.children[0].classList.add('image-active')
     event.currentTarget.children[1].classList.add('image-active')
 
-
-
-
-
     imageSlider.appendChild(tempImageSlider)
+
+
+
+    }
+
+    if(carouselDirection === 0){
+        for (let i = 0; i < imageSlider.children.length; i++){
+            imageSlider.children[i].children[0].classList.remove('image-active')
+            imageSlider.children[i].children[1].classList.remove('image-active')
+        }
+    
+    
+    
+        event.currentTarget.children[0].classList.add('image-active')
+        event.currentTarget.children[1].classList.add('image-active')
+    
+    }
+
+
+
+     if (carouselDirection === -1){
+
+         const tempSlideContainer = slideContainer.lastElementChild.previousElementSibling;
+        //  console.log(tempSlideContainer.getAttribute("id").substring(11))
+         let sliderSpanNewId = parseInt( slideContainer.children[0].getAttribute('id').substring(11))
+         console.log(sliderSpanNewId);
+         slideContainer.removeChild(tempSlideContainer)
+         tempSlideContainer.setAttribute("id", "slider-span" + (sliderSpanNewId -1)) 
+         console.log(tempSlideContainer)
+
+         slideContainer.insertBefore(tempSlideContainer, slideContainer.children[0])
+    
+         const tempImageSlider = imageSlider.lastElementChild;
+         let imageSliderNewId = parseInt(imageSlider.children[0].getAttribute("id").substring(6))
+         imageSlider.removeChild(tempImageSlider)
+    
+         tempImageSlider.setAttribute('id', "slide-" + (imageSliderNewId - 1))
+    
+         let imageNewId = parseInt(imageSlider.children[0].children[0].getAttribute("id").substring(3))
+         tempImageSlider.children[0].setAttribute('id', "img" + (imageNewId -1));
+    
+         let imageButtonNewId = parseInt(imageSlider.children[0].children[1].getAttribute("id").substring(7))
+         tempImageSlider.children[1].setAttribute('id', "button-" + imageButtonNewId -1);
+         tempImageSlider.children[1].setAttribute('href', "#slider-span" + (imageButtonNewId -1));
+    
+    
+    
+    
+    
+         for (let i = 0; i < imageSlider.children.length; i++){
+             imageSlider.children[i].children[0].classList.remove('image-active')
+             imageSlider.children[i].children[1].classList.remove('image-active')
+         }
+    
+    
+    
+         event.currentTarget.children[0].classList.add('image-active')
+         event.currentTarget.children[1].classList.add('image-active')
+    
+         imageSlider.appendChild(tempImageSlider)
+    
+    
+    
+         }
+
+
+
+    previousImage = event.currentTarget;
+
+    
 }
 
 function imageRenderPrev (){
