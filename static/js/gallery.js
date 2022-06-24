@@ -62,10 +62,16 @@ function imageRenderNext (event){
             let elemToStart = (0 - Array.from(event.currentTarget.parentNode.children).indexOf(event.currentTarget))
             let elemToEnd = (Array.from(event.currentTarget.parentNode.children).length - Array.from(event.currentTarget.parentNode.children).indexOf(event.currentTarget))
 
+
+
+
+            //rozwiązanie 1 -> renderowanie obrazków z obu stron jednocześnie
+
             if(elemToEnd < 4) {
             console.log(elemToEnd)
                 for(let i = 0; i < 3; i++){
-                renderElement()
+                    renderElement()
+                    renderElementPrev()
 
                 }
             }
@@ -73,7 +79,8 @@ function imageRenderNext (event){
             if(Math.abs(elemToStart) < 4) {
                 console.log(elemToEnd)
                     for(let i = 0; i < 3; i++){
-                    renderElementPrev()
+                        renderElement()
+                        renderElementPrev()
     
                     }
                 }
