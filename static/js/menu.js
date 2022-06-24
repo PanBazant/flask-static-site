@@ -120,26 +120,13 @@ function searchPizza(word){
         console.log(word)
 
 
-        // checkboxFilter = 0
-        
-
-        // if (el.spiciness > 0 && el.sweet === true){
-        //     checkboxFilter = el.spiciness > 0 && el.sweet === true
-        // } else if (el.spiciness > 0){
-        //     checkboxFilter = el.spiciness > 0
-        // } else if (el.sweet === true){
-        //   checkboxFilter = el.sweet === true
-        // } else {
-        //     checkboxFilter = el.name.toLowerCase().includes(word.toLowerCase())
-        // }
-
 
 
         return el.name.toLowerCase().includes(word.toLowerCase()) &&
                 //nie wiem jaki dać inny warunek, żeby nie robiło nic w innym wypadku
-                spice & sweet ? el.spiciness > 0 && el.sweet === true : 
-                spice ? el.spiciness > 0 : 
-                sweet ? el.sweet === true : el.name.toLowerCase().includes(word.toLowerCase())
+                spice && sweet ? el.spiciness > 0 && el.sweet === true  && el.name.toLowerCase().includes(word.toLowerCase()): 
+                spice ? el.spiciness > 0 && el.name.toLowerCase().includes(word.toLowerCase()) : 
+                sweet ? el.sweet === true  && el.name.toLowerCase().includes(word.toLowerCase()) : el.name.toLowerCase().includes(word.toLowerCase())
     })
     
     filterData.forEach(item => renderItem(item))
