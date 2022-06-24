@@ -1,0 +1,59 @@
+.contact-container{
+    font-size: 2rem;
+    height: 50%;
+    width: 60%;
+    background-color: #DECBB7;
+    display: flex;
+}
+
+.contact-container > div{
+    width: 50%;
+}
+
+.opening-hours{
+    background-color: #8F857D;
+    /* opacity: 0.6; */
+}
+
+.contact-data{
+    margin: 10%;
+}
+
+
+.contact-text{
+    margin:0px;
+}
+
+.contact-current-day{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contact-current-day-p{
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+.contact-icon{
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+.contact-days{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    /* transition: .5s ease-in-out; */
+}
+.contact-day{
+    display: flex;
+    width: 60%;
+    font-size: 1.5rem;
+    margin: 2% 0 2% 0;
+    transition: opacity .5s ease-in-out; 
+}
+
