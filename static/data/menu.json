@@ -9,6 +9,7 @@
           ],
           "spiciness":0,
           "sweet":false,
+          "vegetarian" : true,
           "priceSmallSize":"18",
           "priceMediumSize":"25",
           "priceLargeSize":"32"
@@ -23,6 +24,7 @@
           ],
           "spiciness":0,
           "sweet":false,
+          "vegetarian": false,
           "priceSmallSize":"20",
           "priceMediumSize":"27",
           "priceLargeSize":"31"
@@ -37,6 +39,7 @@
           ],
           "spiciness":0,
           "sweet":false,
+          "vegetarian": true,
           "priceSmallSize":"19",
           "priceMediumSize":"26",
           "priceLargeSize":"30"
@@ -52,6 +55,7 @@
           ],
           "spiciness":0,
           "sweet":false,
+          "vegetarian": false,
           "priceSmallSize":"22",
           "priceMediumSize":"29",
           "priceLargeSize":"36"
@@ -67,6 +71,7 @@
           ],
           "spiciness":0,
           "sweet":true,
+          "vegetarian": false,
           "priceSmallSize":"22",
           "priceMediumSize":"29",
           "priceLargeSize":"36"
@@ -82,6 +87,7 @@
           ],
           "spiciness":0,
           "sweet":true,
+          "vegetarian": false,
           "priceSmallSize":"22",
           "priceMediumSize":"29",
           "priceLargeSize":"36"
@@ -98,6 +104,7 @@
          ],
          "spiciness":0,
          "sweet":true,
+         "vegetarian": false,
          "priceSmallSize":"24",
          "priceMediumSize":"31",
          "priceLargeSize":"38"
@@ -114,6 +121,7 @@
          ],
          "spiciness":0,
          "sweet":true,
+         "vegetarian": false,
          "priceSmallSize":"24",
          "priceMediumSize":"31",
          "priceLargeSize":"38"
@@ -130,6 +138,7 @@
          ],
          "spiciness":2,
          "sweet":false,
+         "vegetarian": false,
          "priceSmallSize":"24",
          "priceMediumSize":"31",
          "priceLargeSize":"38"
@@ -146,6 +155,57 @@
          ],
          "spiciness":2,
          "sweet":true,
+         "vegetarian": false,
+         "priceSmallSize":"24",
+         "priceMediumSize":"31",
+         "priceLargeSize":"38"
+      },
+      {
+         "id":11,
+         "name":"Słodko-ostra vege",
+         "ingredients":[
+            "sos",
+            "ser",
+            "tabasco",
+            "ananas",
+            "ostra papryka"
+         ],
+         "spiciness":2,
+         "sweet":true,
+         "vegetarian": true,
+         "priceSmallSize":"24",
+         "priceMediumSize":"31",
+         "priceLargeSize":"38"
+      },
+      {
+         "id":12,
+         "name":"Ostra vege",
+         "ingredients":[
+            "sos",
+            "ser",
+            "tabasco",
+            "ostra papryka"
+         ],
+         "spiciness":2,
+         "sweet":false,
+         "vegetarian": true,
+         "priceSmallSize":"24",
+         "priceMediumSize":"31",
+         "priceLargeSize":"38"
+      },
+      {
+         "id":13,
+         "name":"Słodka vege",
+         "ingredients":[
+            "sos",
+            "ser",
+            "ananas",
+            "żurawina",
+            "brzoskwinia"
+         ],
+         "spiciness":0,
+         "sweet":true,
+         "vegetarian": true,
          "priceSmallSize":"24",
          "priceMediumSize":"31",
          "priceLargeSize":"38"

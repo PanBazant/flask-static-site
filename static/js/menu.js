@@ -57,6 +57,7 @@ data.forEach(item => renderItem(item))
 const menuSearch = document.querySelector(".menu-search")
 const pizzaHot = document.querySelector(".pizza-hot")
 const pizzaSweet = document.querySelector(".pizza-sweet")
+const pizzaVegetarian = document.querySelector(".pizza-vegetarian")
 
 
 
@@ -65,6 +66,7 @@ const pizzaSweet = document.querySelector(".pizza-sweet")
 
 let spice = false
 let sweet = false
+let vegetarian = false
 
 pizzaHot.addEventListener('change', function() {
     if (this.checked) {
@@ -89,6 +91,20 @@ pizzaHot.addEventListener('change', function() {
       sweet = false
       searchPizza(word)
       console.log("sweet false")
+
+    }
+  });
+
+
+  pizzaVegetarian.addEventListener('change', function() {
+    if (this.checked) {
+      vegetarian = true
+      console.log("vegetarian true")
+      searchPizza(word)
+    } else {
+      vegetarian = false
+      searchPizza(word)
+      console.log("vegetarian false")
 
     }
   });
@@ -124,11 +140,21 @@ function searchPizza(word){
 
         return el.name.toLowerCase().includes(word.toLowerCase()) &&
                 //nie wiem jaki dać inny warunek, żeby nie robiło nic w innym wypadku
+                spice && sweet && vegetarian ? el.spiciness > 0 && el.sweet === true && el.vegetarian === true && el.name.toLowerCase().includes(word.toLowerCase()): 
                 spice && sweet ? el.spiciness > 0 && el.sweet === true  && el.name.toLowerCase().includes(word.toLowerCase()): 
+                spice && vegetarian ? el.spiciness > 0 && el.vegetarian === true  && el.name.toLowerCase().includes(word.toLowerCase()): 
+                vegetarian && sweet ? el.vegetarian === true && el.sweet === true  && el.name.toLowerCase().includes(word.toLowerCase()): 
                 spice ? el.spiciness > 0 && el.name.toLowerCase().includes(word.toLowerCase()) : 
-                sweet ? el.sweet === true  && el.name.toLowerCase().includes(word.toLowerCase()) : el.name.toLowerCase().includes(word.toLowerCase())
+                sweet ? el.sweet === true  && el.name.toLowerCase().includes(word.toLowerCase()) : 
+                vegetarian ? el.vegetarian === true  && el.name.toLowerCase().includes(word.toLowerCase()) :
+                el.name.toLowerCase().includes(word.toLowerCase())
     })
     
     filterData.forEach(item => renderItem(item))
 }
 
+
+/*
+             spice && sweet ? el.spiciness > 0 && el.sweet === true  && el.name.toLowerCase().includes(word.toLowerCase()): 
+                spice ? el.spiciness > 0 && el.name.toLowerCase().includes(word.toLowerCase()) : 
+                sweet ? el.sweet === true  && el.name.toLowerCase().includes(word.toLowerCase()) : el.name.toLowerCase().includes(word.toLowerCase()) */
