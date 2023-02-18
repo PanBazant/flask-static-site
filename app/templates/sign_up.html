@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+<link rel="stylesheet" href={{url_for("static", filename="css/styles.css")}}>
+
+{% block content%}
+
+
+
+<form action="" method="POST">
+    <label for="userName">Nazwa użytkownika</label>
+    <input name="userName" type="text">
+    <label for="userMail">Email</label>
+    <input name="userMail" type="email">
+    <label for="userPassword">Hasło</label>
+    <input name="userPassword" type="password">
+    <label for="userRepeatPassword">Powtórz Hasło</label>
+    <input name="userRepeatPassword" type="password">
+
+    <button type="submit" class="btn btn-primary">Zarejestruj</button>
+</form>
+
+
+{% endblock %}

@@ -170,7 +170,7 @@
             "ananas",
             "ostra papryka"
          ],
-         "spiciness":2,
+         "spiciness":3,
          "sweet":true,
          "vegetarian": true,
          "priceSmallSize":"24",
@@ -186,7 +186,7 @@
             "tabasco",
             "ostra papryka"
          ],
-         "spiciness":2,
+         "spiciness":3,
          "sweet":false,
          "vegetarian": true,
          "priceSmallSize":"24",

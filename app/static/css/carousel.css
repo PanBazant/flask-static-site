@@ -5,6 +5,7 @@
     align-items: center;
     overflow: hidden;
     background: linear-gradient(to right, rgb(255, 65, 188), rgb(255, 75, 43));
+    /* background-color: #decbb7; */
 }
 
 .image-slider{
